@@ -5,7 +5,7 @@ import os
 class ScreenHelper:
     @staticmethod
     def _mac_set_brightness(value: int):
-        result = os.system("brightness " + str(value))
+        result = os.system(f"brightness {value}")
         if (result != 0):
             raise Exception("Please install brightness:\n\nbrew install brightness")
         
@@ -15,7 +15,6 @@ class ScreenHelper:
 
     @staticmethod
     def turn_off():
-        print("TURN OFF")
         if (PlatformHelper.is_mac()):
             ScreenHelper._mac_set_brightness(0)
         else:
@@ -23,7 +22,6 @@ class ScreenHelper:
 
     @staticmethod
     def turn_on():
-        print("TURN ON")
         if (PlatformHelper.is_mac()):
             ScreenHelper._mac_set_brightness(1)
         else:
