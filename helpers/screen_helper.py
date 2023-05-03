@@ -16,7 +16,7 @@ class ScreenHelper:
     @staticmethod
     def turn_off():
         if (PlatformHelper.is_mac()):
-            ScreenHelper._mac_set_brightness(0)
+            ScreenHelper._mac_set_brightness(0.1)
         else:
             ScreenHelper._win_lin_set_brightness(0)
 
